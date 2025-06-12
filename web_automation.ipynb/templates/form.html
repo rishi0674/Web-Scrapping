@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Entry Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Product Entry Form</h2>
+    <form method="POST">
+      <label>Product Name:</label>
+      <input type="text" name="productName" required>
+
+      <label>Price (₹):</label>
+      <input type="number" name="price" step="0.01" required>
+
+      <label>Manufacturing Date:</label>
+      <input type="date" name="mfgDate" required>
+
+      <label>Product Category:</label>
+      <select name="category" required>
+        <option value="">--Select--</option>
+        <option value="electronics">Electronics</option>
+        <option value="food">Food</option>
+        <option value="clothes">Clothes</option>
+      </select>
+
+      <label>Recyclable:</label>
+      <div class="radio-group">
+        <input type="radio" name="recyclable" value="yes" required> Yes
+        <input type="radio" name="recyclable" value="no"> No
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
